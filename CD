@@ -1,34 +1,9 @@
-#!/bin/bash
+#Add to .bashrc under user specified alias
+#Change many directories
+#Example: username$: back 20
+#         will go back 20 directories instead of typing cd ../../../../etc...
 
-_backfunction(){
-if [[ $1 -eq 2 ]]
-then
-    cd ../..
-elif [[ $1 -eq 3 ]]
-then
-    cd ../../..
-elif [[ $1 -eq 4 ]]
-then
-    cd ../../../..
-elif [[ $1 -eq 5 ]]
-then
-    cd ../../../../..
-elif [[ $1 -eq 6 ]]
-then
-    cd ../../../../../..
-elif [[ $1 -eq 7 ]]
-then
-    cd ../../../../../../..
-elif [[ $1 -eq 8 ]]
-then
-    cd ../../../../../../../..
-elif [[ $1 -eq 9 ]]
-then
-    cd ../../../../../../../../..
-elif [[ $1 -eq 10 ]]
-then
-    cd ../../../../../../../../../..
-fi
+function cd_multiple(){
+cd $(printf "%0.0s../" $(seq 1 $1));
 }
-
-alias back="_backfunction"
+alias "back"='cd_multiple'
