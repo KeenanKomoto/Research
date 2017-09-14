@@ -1,0 +1,2 @@
+#!/bin/bash
+scp -r -i $HOME/.ssh/id_rsa -P 922 $1 komotok@fe1.cluster.cs.wwu.edu:/cluster/home/komotok/$2

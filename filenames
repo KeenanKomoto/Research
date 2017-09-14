@@ -1,0 +1,2 @@
+#This script writes all files/folders in a directory to a file named "filenames"
+ls | cat >> filenames
