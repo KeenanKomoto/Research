@@ -1,0 +1,2 @@
+for j in `seq 1 10`;do cd Trial_$j; for i in `seq 20 20 5320`; do a=$(grep "Nuclear Repulsion Energy" SnapTD$i.out | head -1 | awk '{print$5}'); b=$(grep " Total energy for state" SnapTD$i.out| head -5 | tail -1 | awk '{print$6}'); echo Trial_$j\/SnapTD$i.out\ $b\ $a >> ../Energies; done; cd ..; done
+
